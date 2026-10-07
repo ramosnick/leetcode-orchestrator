@@ -1,1 +1,2 @@
-Python Dependencies
+httpx
+sqlalchemy

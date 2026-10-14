@@ -10,7 +10,7 @@ query updateSubmissions($username: String!, $limit: Int!) {
     }
 }
 """
-def getRecentSubmissions(username: str, limit: int = 5):
+def get_recent_submissions(username: str, limit: int = 5):
     #{Key, Value} = {"query": queryString, "variables": {"username": username, "limit": limit}}
     #queryString = String defined above
     #variables = Nested dictionary passing function arguments :
@@ -57,7 +57,7 @@ def getRecentSubmissions(username: str, limit: int = 5):
         return None
 
 ##
-for submission in getRecentSubmissions("ramosnick"): #Testing
+for submission in get_recent_submissions("ramosnick"): #Testing
     print(submission)
 ##
 

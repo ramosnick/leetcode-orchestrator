@@ -14,6 +14,7 @@ class User(Base):
     #Tier 3: Both Data Structures and Algorithms 
     leader = Column(Boolean, default=False)
     is_active = Column(Boolean, default=True)
+    sessions_attended = Column(Integer, default=1, nullable=False)
     submissions = relationship("Submission", back_populates="user", cascade="all, delete-orphan")
 
 class Submission(Base):
@@ -22,5 +23,7 @@ class Submission(Base):
     title_slug = Column(String, nullable=False, index=True)
     title = Column(String, nullable=False)
     timestamp = Column(Integer, nullable=False)
+    acceptance_status = Column(String, nullable=False, index=True)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     user = relationship("User", back_populates="submissions")
+
